@@ -1,8 +1,8 @@
 package test;
 
-import java.TwoSum;
-
 import org.junit.Test;
+
+import code.TwoSum;
 
 /**
  * @author KevinSu kevinsu917@126.com
@@ -18,7 +18,7 @@ public class TwoSumTest {
 		int target = 9;
 		
 		TwoSum sum = new TwoSum();
-		int[] result = sum.solution(array, target);
+		int[] result = sum.twoSum(array, target);
 		
 //		int[] expected = {};
 //		Assert.assertArrayEquals(expected, sum.twoSum(array, target));
