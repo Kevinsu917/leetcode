@@ -15,11 +15,8 @@ import java.util.ArrayList;
  */
 public class ExcelSheetColumnTitle {
 
-	private String[] alphabetArray = { "A", "B", "C", "D", "E", "F", "G", "H",
-			"I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
-			"V", "W", "X", "Y", "Z" };
-	
 	private int modSize = 26;
+	private final int OFFSET = 64;
 
 	public String convertToTitle(int n) {
 
@@ -53,7 +50,7 @@ public class ExcelSheetColumnTitle {
 		}
 
 		for (int i = resultList.size() - 1; i >= 0; i--) {
-			resultStr += alphabetArray[resultList.get(i) - 1];
+			resultStr += (char) (resultList.get(i) + OFFSET);
 		}
 
 		return resultStr;

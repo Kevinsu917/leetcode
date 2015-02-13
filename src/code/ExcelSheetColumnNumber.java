@@ -22,44 +22,13 @@ import java.util.HashMap;
  *               AB -> 28
  */
 public class ExcelSheetColumnNumber {
-
-	HashMap<String, Integer> catMap = new HashMap<String, Integer>();
-
-	public ExcelSheetColumnNumber() {
-		// TODO Auto-generated constructor stub
-		catMap.put("A", 1);
-		catMap.put("B", 2);
-		catMap.put("C", 3);
-		catMap.put("D", 4);
-		catMap.put("E", 5);
-		catMap.put("F", 6);
-		catMap.put("G", 7);
-		catMap.put("H", 8);
-		catMap.put("I", 9);
-		catMap.put("J", 10);
-		catMap.put("K", 11);
-		catMap.put("L", 12);
-		catMap.put("M", 13);
-		catMap.put("N", 14);
-		catMap.put("O", 15);
-		catMap.put("P", 16);
-		catMap.put("Q", 17);
-		catMap.put("R", 18);
-		catMap.put("S", 19);
-		catMap.put("T", 20);
-		catMap.put("U", 21);
-		catMap.put("V", 22);
-		catMap.put("W", 23);
-		catMap.put("X", 24);
-		catMap.put("Y", 25);
-		catMap.put("Z", 26);
-	}
+	private final int OFFSET = 64;
 
 	public int titleToNumber(String s) {
 		int result = 0;
+		
 		for (int i = 0; i < s.length(); i++) {
-			result += catMap.get(String.valueOf(s.charAt(i)))
-					* Math.pow(26, s.length() - 1 - i);
+			result += (Integer.valueOf(s.charAt(i)) - OFFSET) * Math.pow(26, s.length() - 1 - i);
 		}
 		return result;
 	}
